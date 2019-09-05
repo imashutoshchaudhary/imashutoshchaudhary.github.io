@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Certificates</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+/* The grid: Four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+  opacity: 0.8; 
+  cursor: pointer; 
+}
+
+.column img:hover {
+  opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The expanding image container */
+.container {
+  position: relative;
+  display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  font-size: 20px;
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<div style="text-align:center">
+  <h2>My Certificates</h2>
+  <p>Click on certificates to enlarge</p>
+</div>
+
+<!-- The four columns -->
+<div class="row">
+
+  <div class="column">
+    <img src="images/core_java_certificate.jpg" alt="Core Java" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="images/android_certificate.jpg" alt="Android" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="images/advance_java_servlets.jpg" alt="Advance Java (Servlets)" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="images/advance_java_jsp.jpg" alt="Advance Java (JSP)" style="width:100%" onclick="myFunction(this);">
+  </div>
+  
+</div>
+
+<div class="row">
+
+  <div class="column">
+    <img src="images/advance_java_struts.jpg" alt="Advance Java (Struts)" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="images/oracle_certificate.jpg" alt="Oracle Certificate" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="images/college_fest_certificate.jpg" alt="Software Presentation in college" style="width:100%" onclick="myFunction(this);">
+  </div>
+  
+</div>
+
+<div class="container">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <img id="expandedImg" style="width:100%">
+  <div id="imgtext"></div>
+</div>
+
+<div itemscope itemtype='http://schema.org/Person' class='fiverr-seller-widget' style='display: inline-block;'>
+     <a itemprop='url' href=https://www.fiverr.com/im_ashutosh rel="nofollow" target="_blank" style='display: inline-block;'>
+        <div class='fiverr-seller-content' id='fiverr-seller-widget-content-332aaa94-e3cd-46ac-b2d9-21bb3bc6bd65' itemprop='contentURL' style='display: none;'></div>
+        <div id='fiverr-widget-seller-data' style='display: none;'>
+            <div itemprop='name' >im_ashutosh</div>
+            <div itemscope itemtype='http://schema.org/Organization'><span itemprop='name'>Fiverr</span></div>
+            <div itemprop='jobtitle'>Seller</div>
+            <div itemprop='description'>I am a passionate Android App developer. I am an Engineer by Education and I love to make Websites in Wordpress. I have a some applications on the Play Store as well.</div>
+        </div>
+    </a>
+</div>
+
+<script>
+function myFunction(imgs) {
+  var expandImg = document.getElementById("expandedImg");
+  var imgText = document.getElementById("imgtext");
+  expandImg.src = imgs.src;
+  imgText.innerHTML = imgs.alt;
+  expandImg.parentElement.style.display = "block";
+}
+</script>
+
+</body>
+</html>
